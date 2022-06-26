@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Add post</h1>
+<div mat-dialog-content>
+    <form [formGroup]="addpostForm">
+
+        <mat-form-field appearance="outline">
+            <mat-label>write something</mat-label>
+            <input formControlName="addPost" matInput placeholder="type here...">
+        </mat-form-field>
+
+    </form>    
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button style= "margin-left: 10px;" mat-raised-button color="primary" (click)="savePost()">Done</button>
+</div>

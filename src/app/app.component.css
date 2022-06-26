@@ -1,0 +1,25 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1c5084;
+  color: white;
+  font-weight: 600;
+}
+
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+  margin-left: 1100px;
+}
+
+.gap {
+  margin-top: 15px;
+  margin-left: 20px;
+}

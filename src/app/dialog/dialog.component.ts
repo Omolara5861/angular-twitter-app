@@ -20,7 +20,7 @@ export class DialogComponent implements OnInit {
   }
 
   savePost(){
-    if(this.addpostForm.valid) {
+    if(this.addpostForm.valid && this.addpostForm.value !== '') {
       this.api.postAddpost(this.addpostForm.value)
       .subscribe({
         next:(res)=>{
@@ -35,6 +35,7 @@ export class DialogComponent implements OnInit {
 
       })
     }
+    alert('Cannot enter empty tweet');
   }
 
 }

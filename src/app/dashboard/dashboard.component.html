@@ -13,9 +13,12 @@
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions>
-          <mat-icon>thumb_up_alt</mat-icon>
-          <button mat-button>comment</button>
+          {{numberOfLikes}}
+          <button mat-button color="primary" (click)="likeTweet()">Like</button>
+          <button mat-button color="warn" (click)="dislikeTweet()">Dislike</button>
+          <button mat-button >comment</button>
         </mat-card-actions>
+
       </mat-card>
     </div>
   </section>

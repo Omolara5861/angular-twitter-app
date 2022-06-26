@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild(MatSort) sort!: MatSort;
   tweets: any;
-
+  numberOfLikes : number = 0;
   constructor(private dialog : MatDialog, private api : ApiService){}
 
   openDialog() {
@@ -46,5 +46,12 @@ export class DashboardComponent implements OnInit {
     this.getAllpost();
   }
 
+  likeTweet() {
+    this.numberOfLikes++;
+  }
+
+  dislikeTweet() {
+    this.numberOfLikes--;
+  }
 }
 

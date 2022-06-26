@@ -14,6 +14,8 @@ import {MatSort} from '@angular/material/sort';
 })
 export class DashboardComponent implements OnInit {
 
+
+
   displayedColumns: string[] = ['tweet'];
 
   dataSource!: MatTableDataSource<any>;
@@ -21,6 +23,8 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   tweets: any;
   numberOfLikes : number = 0;
+  numberOfComments: number = 0;
+
   constructor(private dialog : MatDialog, private api : ApiService){}
 
   openDialog() {
@@ -53,5 +57,13 @@ export class DashboardComponent implements OnInit {
   dislikeTweet() {
     this.numberOfLikes--;
   }
+
+  commentOnTweet() {
+    const comment = prompt("What's your comment?");
+    if (comment && comment.trim().length) {
+      this.numberOfComments++;
+    }
+  }
+
 }
 

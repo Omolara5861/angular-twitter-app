@@ -6,13 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
+  baseUrl: string = 'https://twitter-dtab.herokuapp.com/tweetList';
+
   constructor(private http : HttpClient) { }
 
   postAddpost(data : any) {
-    return this.http.post<any>("http://localhost:3000/allPost/", data);
+    return this.http.post<any>(this.baseUrl, data);
   }
 
   getAddpost() {
-    return this.http.get<any>("http://localhost:3000/allPost/")
+    return this.http.get<any>(this.baseUrl)
   }
 }

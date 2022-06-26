@@ -15,7 +15,7 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.addpostForm = this.formBuilder.group({
-      addPost : ['', Validators.required]
+      tweet : ['', Validators.required]
     })
   }
 

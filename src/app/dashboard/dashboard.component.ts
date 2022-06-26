@@ -3,7 +3,6 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from '../dialog/dialog.component';
 import { ApiService } from '../services/api.service';
-import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 
 
@@ -14,11 +13,13 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
-  displayedColumns: string[] = ['addPost'];
+
+  displayedColumns: string[] = ['tweet'];
+
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatSort) sort!: MatSort;
+  tweets: any;
 
   constructor(private dialog : MatDialog, private api : ApiService){}
 
@@ -32,7 +33,8 @@ export class DashboardComponent implements OnInit {
     this.api.getAddpost()
     .subscribe({
       next:(res)=> {
-        console.log(res);
+        this.tweets = res;
+        this.getAllpost();
       },
       error:(err)=> {
         alert("Unexpected error occured")
